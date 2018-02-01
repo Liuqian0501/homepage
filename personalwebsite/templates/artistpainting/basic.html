@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Artist style transformation</title>   
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-grayscale/vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/realtimestyletrans.appspot.com/css/base.css">
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> Artist style transformation</a>
+            </div>
+          
+            <div class="collapse navbar-collapse" id="bs-nav-demo">
+              <ul class="nav navbar-nav">
+                <li><a href="/"><span class="fa fa-home fa-fw"></span> Home</a></li>
+                <li><a href="https://github.com/Liuqian0501/artist-style-transform/"><span class="fa fa-github fa-fw"></span> Github</a></li>
+                <li><a href="https://www.linkedin.com/in/qian-liu/"><span class="fa fa-linkedin-square fa-fw"></span> Linkdin</a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://www.qianliukevin.com/"><span class="fa fa-home fa-fw"></span> Personal website</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+          <div class="jumbotron jumbotron-fluid">
+            <h2><i class="fa fa-camera-retro"></i> Artist painting style transformation </h2>
+            <p>Add styles from famous paintings to any photo in a fraction of a second! The output will be resize to 400 x 400.</p> 
+        </div>
+
+        
+        <div class="container">
+            <h3>Step 1: upload an image</h3>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" id="image_centent" class="form-control input-lg">
+            
+        
+            <h3>Step 2: choose one style: </h3>
+            <div class="row"> 
+                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                     <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios1" value="la_muse.ckpt" checked>
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/a-muse-1935.jpg" class="img-responsive" >
+                          <span>A muse, 1935</span>
+                        </span>
+                     </label>
+               </div> 
+              
+                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                    <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios2" value="rain_princess.ckpt">
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/rain-princess.jpeg" class="img-responsive"  >
+                          <span>Rain Princess</span>
+                        </span>
+                    </label>
+               </div> 
+        
+                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                    <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios3" value="scream.ckpt">
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/the-scream.jpg" class="img-responsive" >
+                          <span>The scream</span>
+                        </span>
+                    </label>
+               </div> 
+        
+               <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                    <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios4" value="udnie.ckpt">
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/udnie.jpg" class="img-responsive" >
+                          <span>Udnie</span>
+                        </span>
+                     </label>
+               </div> 
+        
+                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                    <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios5" value="wave.ckpt">
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/the-great-wave .jpg" class="img-responsive" >
+                          <span>the great wave</span>
+                        </span>
+                    </label>
+               </div> 
+        
+                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
+                    <label class="text-center radio-thumbnail">
+                        <input type="radio" name="radios" id="optionsRadios6" value="wreck.ckpt">
+                        <span class="thumbnail">
+                          <img src="https://storage.googleapis.com/realtimestyletrans/images/wreck.jpg" class="img-responsive" >
+                          <span>wreck</span>
+                        </span>
+                    </label> 
+               </div> 
+          </div> 
+          <button type="submit" class="btn btn-success btn-lg btn-block">Start style transforming</button>
+          </form>
+        </div>  
+    </div>
+
+    <div class="container"> 
+      <img src= "{% static src1 %}" alt="My image" class="img-responsive" > 
+      <img src= "{% static src2 %}"  alt="My image" class="img-responsive" > 
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

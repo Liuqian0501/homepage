@@ -1,2 +1,7 @@
 Django==2.0.1
+numpy==1.14.0
+Pillow==5.0.0
+protobuf==3.5.1
 pytz==2017.3
+six==1.11.0
+tensorflow==0.12.1
