@@ -33,12 +33,3 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT )
-
-urlpatterns += staticfiles_urlpatterns()
-
-if settings.DEBUG:
-    urlpatterns += [
-        re_path(r'^media/(?P<path>.*)$', serve, {
-            'document_root': settings.STATIC_ROOT,
-        }),
-    ]

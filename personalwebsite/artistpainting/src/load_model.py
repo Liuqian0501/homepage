@@ -16,7 +16,7 @@ def get_img(src, img_size=False):
 ## get 3d, np and rgb img
 def get_rgb_np(img_in):
     img = Image.open(img_in).convert('RGB')
-    img = ImageOps.fit(img, (400, 400), Image.ANTIALIAS)
+    img = ImageOps.fit(img, (600, 600), Image.ANTIALIAS)
     img_np = np.array(img)
     return get_img(img_np)
 
@@ -25,8 +25,6 @@ def rundeeplearning(img_in, checkpoint_dir, batch_size=1):
    
     img = get_rgb_np(img_in) 
     img_shape = get_img(img).shape
-    
-
     
     g = tf.Graph()
     soft_config = tf.ConfigProto(allow_soft_placement=True)
@@ -44,8 +42,6 @@ def rundeeplearning(img_in, checkpoint_dir, batch_size=1):
                                          name='img_placeholder')
         preds = net(img_placeholder)
 
-        
-
         saver = tf.train.Saver()
         # # Load 
         checkpoint_dir = os.path.dirname(os.path.abspath(__file__)) + "/Model/" + checkpoint_dir
@@ -58,7 +54,5 @@ def rundeeplearning(img_in, checkpoint_dir, batch_size=1):
         _preds = sess.run(preds, feed_dict={img_placeholder:X})
         img_np = np.clip(_preds[0], 0, 255).astype(np.uint8)
         img_out = Image.fromarray(img_np)
-        # buffer = io.BytesIO()
-        # img_out.save(buffer, format="PNG")
 	
         return img_out

@@ -10,7 +10,7 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-grayscale/vendor/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/realtimestyletrans.appspot.com/css/base.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 
     </head>
 
@@ -44,7 +44,7 @@
         <div class="container">
           <div class="jumbotron jumbotron-fluid">
             <h2><i class="fa fa-camera-retro"></i> Artist painting style transformation </h2>
-            <p>Add styles from famous paintings to any photo in a fraction of a second! The output will be resize to 400 x 400.</p> 
+            <p>Add styles from famous paintings to any photo in a fraction of a second! The output will be resize to 600 x 600.</p> 
         </div>
 
         
@@ -121,10 +121,26 @@
         </div>  
     </div>
 
-    <div class="container"> 
-      <img src= "{% static src1 %}" alt="My image" class="img-responsive" > 
-      <img src= "{% static src2 %}"  alt="My image" class="img-responsive" > 
+    <br>
+    <br>
+    <div class='container'>
+        <div class="col-lg-6 col-xs-6">
+          <a href="#">
+                {% if src2 %}
+                  <img class="image-object img-responsive" height="600" width="600" src="{% static src2 %}" >
+                {% endif %}
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-xs-6">
+          <a href="#">
+                {% if src1 %}
+                  <img class="image-object img-responsive" height="600" width="600" src="{% static src1 %}">
+                {% endif %}
+          </a>
+        </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
