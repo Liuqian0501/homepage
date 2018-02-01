@@ -51,5 +51,15 @@ in `/etc/ssh/sshd_config`:
     cd personalwebsite
     ```
 
+# Step 2: Create a django project and set up config
+
+```
+pip install django
+pip freeze -> requirements.txt
+
+django-admin startproject personalwebsite
+
+```
+
 
 
