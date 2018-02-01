@@ -24,13 +24,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> Artist style transformation</a>
+              <a href="/artistpainting/" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> Artist style transformation</a>
             </div>
           
             <div class="collapse navbar-collapse" id="bs-nav-demo">
               <ul class="nav navbar-nav">
                 <li><a href="/"><span class="fa fa-home fa-fw"></span> Home</a></li>
-                <li><a href="https://github.com/Liuqian0501/artist-style-transform/"><span class="fa fa-github fa-fw"></span> Github</a></li>
                 <li><a href="https://www.linkedin.com/in/qian-liu/"><span class="fa fa-linkedin-square fa-fw"></span> Linkdin</a></li>
               </ul>
 
@@ -44,7 +43,7 @@
         <div class="container">
           <div class="jumbotron jumbotron-fluid">
             <h2><i class="fa fa-camera-retro"></i> Artist painting style transformation </h2>
-            <p>Add styles from famous paintings to any photo in a fraction of a second! The output will be resize to 600 x 600.</p> 
+            <p>Add styles from famous paintings to any photo in a fraction of seconds! The output will be resize to 600 x 600.</p> 
         </div>
 
         
@@ -54,11 +53,11 @@
                 <input type="file" name="image" id="image_centent" class="form-control input-lg">
             
         
-            <h3>Step 2: choose one style: </h3>
+            <h3>Step 2: choose styles combo: </h3>
             <div class="row"> 
                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                      <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios1" value="la_muse.ckpt" checked>
+                        <input type="checkbox" autocomplete="off" name="radios_1" id="optionsRadios1" value="la_muse.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/a-muse-1935.jpg" class="img-responsive" >
                           <span>A muse, 1935</span>
@@ -68,7 +67,7 @@
               
                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                     <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios2" value="rain_princess.ckpt">
+                        <input type="checkbox" autocomplete="off" autocomplete="off" name="radios_2" id="optionsRadios2" value="rain_princess.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/rain-princess.jpeg" class="img-responsive"  >
                           <span>Rain Princess</span>
@@ -78,7 +77,7 @@
         
                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                     <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios3" value="scream.ckpt">
+                        <input type="checkbox" autocomplete="off" autocomplete="off" name="radios_3" id="optionsRadios3" value="scream.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/the-scream.jpg" class="img-responsive" >
                           <span>The scream</span>
@@ -88,7 +87,7 @@
         
                <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                     <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios4" value="udnie.ckpt">
+                        <input type="checkbox" autocomplete="off" autocomplete="off" name="radios_4" id="optionsRadios4" value="udnie.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/udnie.jpg" class="img-responsive" >
                           <span>Udnie</span>
@@ -98,7 +97,7 @@
         
                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                     <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios5" value="wave.ckpt">
+                        <input type="checkbox" autocomplete="off" autocomplete="off" name="radios_5" id="optionsRadios5" value="wave.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/the-great-wave .jpg" class="img-responsive" >
                           <span>the great wave</span>
@@ -108,7 +107,7 @@
         
                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-6"> 
                     <label class="text-center radio-thumbnail">
-                        <input type="radio" name="radios" id="optionsRadios6" value="wreck.ckpt">
+                        <input type="checkbox" autocomplete="off" name="radios_6" id="optionsRadios6" value="wreck.ckpt" checked>
                         <span class="thumbnail">
                           <img src="https://storage.googleapis.com/realtimestyletrans/images/wreck.jpg" class="img-responsive" >
                           <span>wreck</span>
@@ -124,21 +123,14 @@
     <br>
     <br>
     <div class='container'>
-        <div class="col-lg-6 col-xs-6">
-          <a href="#">
-                {% if src2 %}
-                  <img class="image-object img-responsive" height="600" width="600" src="{% static src2 %}" >
-                {% endif %}
-          </a>
-        </div>
 
-        <div class="col-lg-6 col-xs-6">
-          <a href="#">
-                {% if src1 %}
-                  <img class="image-object img-responsive" height="600" width="600" src="{% static src1 %}">
-                {% endif %}
-          </a>
-        </div>
+        {% for img in style_img %}
+          <div class="col-lg-6 col-xs-6">
+            <a>
+                <img class="image-object img-responsive" height="600" width="600" src="{% static img %}" >
+            </a>
+          </div>
+        {% endfor %}
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
