@@ -99,4 +99,10 @@ in `/etc/ssh/sshd_config`:
     # the server have to open port 8008 in firewall rule
 ```
 
+# Step 3: Create app in persenalwebsite project
+
+```
+$python manage.py startapp artistpainting
+set up INSTALLED_APPS in settings
+```
 
