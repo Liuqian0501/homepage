@@ -45,9 +45,11 @@ in `/etc/ssh/sshd_config`:
     source personalwebsite_env/bin/activate
     python --version
     ```
-7. clone this reporsitory from github
-`git clone https://github.com/Liuqian0501/personalwebsite.git`
-
+8. clone this reporsitory from github
+    ```
+    git clone https://github.com/Liuqian0501/personalwebsite.git
+    cd personalwebsite
+    ```
 
 
 
