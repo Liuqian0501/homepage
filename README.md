@@ -28,3 +28,10 @@ in `/etc/ssh/sshd_config`:
     ```
     ssh username@server_ip_address
     ```
+    
+5. and for fun
+`export PS1=":-)"`
+
+
+# Step 2: clone this reporsitory from github
+
