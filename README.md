@@ -89,6 +89,12 @@ in `/etc/ssh/sshd_config`:
           Applying auth.0009_alter_user_last_name_max_length... OK
           Applying sessions.0001_initial... OK
     $python manage.py collectstatic
+    $python manage.py createsuperuser
+        Username (leave blank to use 'kevin'): 
+        Email address: liu.qian.am@gmail.com
+        Password: 
+        Password (again): 
+        Superuser created successfully.
     $python manage.py runserver 0:8008
     # the server have to open port 8008 in firewall rule
 ```
