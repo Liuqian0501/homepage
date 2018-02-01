@@ -62,9 +62,9 @@ in `/etc/ssh/sshd_config`:
     $cd personalwebsite/ && ls
     __init__.py  settings.py  urls.py  wsgi.py
 
-    $mkdir setting && cp __init__.py settings/__init__.py && cp settings.py settings/basic.py && cp settings.py settings/local.py &&cp settings.py settings/production.py && rm settings.py
+    $mkdir setting && cp __init__.py settings/__init__.py && cp settings.py settings/base.py && cp settings.py settings/local.py &&cp settings.py settings/production.py && rm settings.py
     $cd settings/ && ls
-    basic.py  __init__.py  local.py  production.py
+    base.py  __init__.py  local.py  production.py
 ```
 2. setup config
 ```
