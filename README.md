@@ -34,12 +34,20 @@ in `/etc/ssh/sshd_config`:
 
 6. install pip and virtualenv
     ```
+    sudo apt-get update
     sudo apt-get install python-pip python-dev build-essential 
     sudo pip install --upgrade pip 
     sudo pip install --upgrade virtualenv 
     ```
-. clone this reporsitory from github
+7. make a virtualenv of python3.5
+    ```
+    virtualenv -p python3.5 personalwebsite_env
+    source personalwebsite_env/bin/activate
+    python --version
+    ```
+7. clone this reporsitory from github
 `git clone https://github.com/Liuqian0501/personalwebsite.git`
+
 
 
 
