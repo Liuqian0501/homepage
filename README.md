@@ -32,6 +32,14 @@ in `/etc/ssh/sshd_config`:
 5. and for fun
 `export PS1=":-)"`
 
+6. install pip and virtualenv
+    ```
+    sudo apt-get install python-pip python-dev build-essential 
+    sudo pip install --upgrade pip 
+    sudo pip install --upgrade virtualenv 
+    ```
+. clone this reporsitory from github
+`git clone https://github.com/Liuqian0501/personalwebsite.git`
 
-# Step 2: clone this reporsitory from github
+
 
