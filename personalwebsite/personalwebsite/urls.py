@@ -27,9 +27,13 @@ from django.conf import settings
 from django.urls import re_path
 from django.views.static import serve
 
+from .views import home
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('artistpainting/', include('artistpainting.urls')),
+    path('project/', include('project.urls')),
+    path('', home, name='home'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT )

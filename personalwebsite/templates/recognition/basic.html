@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/jpg" href="http://www.diegoivaldi.com/wp-content/uploads/2017/01/La-fucina-dellanimarsz.jpg" />
+        <title>Recognition</title>   
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://blackrockdigital.github.io/startbootstrap-grayscale/vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/project/recognition" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> Recognition</a>
+            </div>
+          
+            <div class="collapse navbar-collapse" id="bs-nav-demo">
+              <ul class="nav navbar-nav">
+                <li><a href="/"><span class="fa fa-home fa-fw"></span> Home</a></li>
+                <li><a href="https://www.linkedin.com/in/qian-liu/"><span class="fa fa-linkedin-square fa-fw"></span> Linkdin</a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://www.qianliukevin.com/"> <span class="fa fa-home fa-fw"></span> My personal website</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+          <div class="jumbotron jumbotron-fluid">
+            <h2><i class="fa fa-camera-retro"></i> Object Recognition</h2>
+            <p>Image recognition with Keras, Tensorflow, and InceptionV3. Keras Applications are deep learning models that are made available alongside pre-trained weights. These models can be used for prediction, feature extraction, and fine-tuning.
+            </p> 
+        </div>
+              
+
+        <div class="container">
+            <div class="row col-md-offset-3">
+                <div class="col-md-9">
+                <h3>Please select an image</h3>
+                <form method="POST" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="image" class="form-control"/>
+                  </div>
+            
+                  <button type="submit" class="btn btn-success">Run</button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <hr class="separator">
+
+        <div class="media alert alert-info">
+            <div class="row col-md-offset-3">
+              <div class="col-md-4 col-xs-6">
+                {% if image_url %}
+                  <img class="book-image" src="{% static image_url %}" style="max-width:50%; height:auto">
+                {% endif %}
+              </div>
+              <div class="col-md-5 col-xs-6">
+                {% if predictions %}
+                  <ul class="list-unstyled">
+                  {% for prediction in predictions %}
+                    <li>{{prediction.description}} <b>{{prediction.probability}}%</b></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
+</html>
