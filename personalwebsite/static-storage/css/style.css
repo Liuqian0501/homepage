@@ -660,11 +660,11 @@ h3.agileits-title {
 ul.address li {
     display: block;
     font-size: 0.9em;
-    color: #efefef;
+    color: #bdb8b8;
     margin-top: 1em;
 }
 ul.address li a{ 
-    color: #efefef; 
+    color: #cac7c7; 
 	text-decoration:none;
 }
 ul.address li a:hover {
@@ -1169,8 +1169,11 @@ a.pa_italic:focus {
     margin-bottom: 1.2em; 
 }
 h3.agileits-title {
+	color: #ff910a;
+	background-color:rgba(0, 0, 0, 0.73);
     font-size: 1.8em; 
-    margin-bottom: 0.8em;
+	margin-bottom: 0.8em;
+	
 }
 .header-w3right {
     padding-left: 1em;

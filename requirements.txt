@@ -1,7 +1,13 @@
 Django==2.0.1
+gunicorn==19.7.1
+h5py==2.6.0
+Keras==1.2.1
 numpy==1.14.0
 Pillow==5.0.0
 protobuf==3.5.1
 pytz==2017.3
+PyYAML==3.12
+scipy==1.0.0
 six==1.11.0
 tensorflow==0.12.1
+Theano==1.0.1
